@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImarGamingPC - The Ultimate Gaming Hub</title>
+    
+    <style>
+        /* [आधारभूत और सामान्य स्टाइल्स] */
+        body {
+            font-family: 'Consolas', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            scroll-behavior: smooth;
+        }
+
+        /* एनिमेटेड बैकग्राउंड */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1a1a1a, #0d0d0d, #1a1a1a);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* हीरो बैनर */
+        .hero-banner {
+            height: 80vh; 
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url('YOUR_GAMING_BACKGROUND_IMAGE_URL') center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid #ff33cc;
+        }
+        .hero-banner h1 {
+            color: #00ffff;
+            font-size: 7em;
+            text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+            animation: neon-glow 1.5s ease-in-out infinite alternate;
+        }
+        .hero-banner p {
+            font-size: 2em;
+            color: #ff33cc;
+            margin-top: 20px;
+        }
+        
+        .section {
+            padding: 80px 40px;
+            border-bottom: 2px solid #222;
+            text-align: center;
+            transition: background-color 0.5s ease, transform 0.3s ease;
+        }
+        .section:nth-child(even) { background-color: #1a1a1a; }
+        .section:nth-child(odd) { background-color: #121212; }
+        .section h2 {
+            font-size: 2.5em;
+            color: #ff33cc;
+            margin-bottom: 30px;
+        }
+        
+        /* [बड़ा फ्लोटिंग सब्सक्राइब बटन] */
+        .floating-subscribe {
+            position: fixed;
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 1000;
+            display: block;
+            padding: 20px 40px; 
+            font-size: 1.8em; 
+            background-color: #ff0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px; 
+            font-weight: bold;
+            border: 3px solid white; 
+            animation: pulse-red 1.8s infinite; 
+            transition: transform 0.3s;
+        }
+        .floating-subscribe:hover {
+            background-color: #cc0000;
+            transform: scale(1.1); 
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 4px 15px rgba(255, 0, 0, 0.6); } 
+            50% { box-shadow: 0 4px 25px rgba(255, 0, 0, 1), 0 0 8px white; } 
+            100% { box-shadow: 0 4px 15px rgba(255, 0, 0, 0.6); }
+        }
+
+        /* [नया स्टाइल: सेंसिटिविटी टेबल] */
+        .sensitivity-table {
+            max-width: 600px;
+            margin: 40px auto 0;
+            border-collapse: collapse;
+            width: 100%;
+            text-align: left;
+            box-shadow: 0 0 20px rgba(255, 51, 204, 0.5);
+        }
+        .sensitivity-table th, .sensitivity-table td { padding: 15px; border: 1px solid #333; font-size: 1.1em; }
+        .sensitivity-table th { background-color: #330033; color: #00ffff; text-transform: uppercase; }
+        .sensitivity-table td { background-color: #1a1a1a; color: #e0e0e0; }
+        .sensitivity-table td strong { color: #ff33cc; }
+
+        /* [नया स्टाइल: ओपन/क्लोज बटन और कंटेंट] */
+        .sensitivity-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out; 
+            padding: 0 20px; 
+        }
+        .open-close-btn {
+            background-color: #ff33cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .open-close-btn:hover {
+            background-color: #cc00a3;
+        }
+
+        /* [बाकी स्टाइल्स जैसे वीडियो, काउंटर, FAQ, गैलरी, आदि यहाँ हैं] */
+        .live-dot { height: 15px; width: 15px; background-color: #ff0000; border-radius: 50%; display: inline-block; margin-right: 15px; animation: live-pulse 1.5s infinite; }
+        .gallery-item-img { width: 200px; height: 200px; object-fit: cover; border: 3px solid #00ffff; border-radius: 10px; opacity: 0.9; transition: opacity 0.3s, transform 0.3s, border-color 0.3s; }
+        #backToTop { display: none; position: fixed; bottom: 110px; right: 40px; z-index: 999; border: none; outline: none; background-color: #ff33cc; color: white; cursor: pointer; padding: 10px 15px; border-radius: 50%; font-size: 1.5em; box-shadow: 0 0 10px rgba(255, 51, 204, 0.8); }
+
+    </style>
+</head>
+<body>
+    
+    <a href="https://www.youtube.com/@imargamingpc?sub_confirmation=1" target="_blank" class="floating-subscribe">
+        ▶️ SUBSCRIBE (सदस्यता लें)
+    </a>
+    <button onclick="topFunction()" id="backToTop" title="Go to top">⬆️</button>
+
+    <div class="hero-banner">
+        <h1 style="color: #00ffff;">@imargamingpc</h1>
+        <p>PC गेमिंग का भविष्य यहाँ है। अपनी किंवदंती (Legend) बनाएँ।</p>
+    </div>
+
+    <div class="section" style="padding: 40px 20px;">
+        <div class="trending-topics">🔥 Trending Now: FPS Season 3 Meta Guide!</div>
+        <div class="live-indicator">
+            <span class="live-dot"></span>
+            **अभी ऑफलाइन हैं। अगली स्ट्रीम के लिए सब्सक्राइब करें!**
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>हम कौन हैं?</h2>
+        <p>
+            **@imargamingpc** सिर्फ एक चैनल नहीं, यह एक **PC गेमिंग क्रांति** है!
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>हमारा लेटेस्ट वीडियो</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?autoplay=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <div class="merch-area">
+        <h2>ImarGamingPC मर्चेंडाइज!</h2>
+    </div>
+
+    <div class="section">
+        <h2>अपडेट मिस न करें!</h2>
+        <form class="subscribe-form" onsubmit="alert('Thank you for subscribing!'); return false;">
+            <input type="email" placeholder="अपना ईमेल यहाँ डालें" required>
+            <button type="submit">सब्सक्राइब करें</button>
+        </form>
+    </div>
+
+    <div class="section">
+        <h2>हमारे आंकड़े</h2>
+        </div>
+    
+    <div class="section">
+        <h2>हमारा गेमिंग गियर</h2>
+        <div class="gear-grid">
+            <div class="gear-item">
+                <img src="YOUR_PC_IMAGE_URL" alt="Gaming PC" style="width:100%; height:auto; border-radius:5px; margin-bottom:10px;">
+                <h3>गेमिंग PC बिल्ड</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="sensitivity-main">
+        <h2>🖱️ हमारी प्रो सेंसिटिविटी सेटिंग्स</h2>
+        <p>प्रो-लेवल एक्यूरेसी के पीछे के राज़ देखें!</p>
+        
+        <button class="open-close-btn" onclick="toggleSection('sensitivity-content', this)">
+            सेटिंग्स दिखाएँ ▶️
+        </button>
+
+        <div class="sensitivity-content" id="sensitivity-content">
+            <table class="sensitivity-table">
+                <thead>
+                    <tr>
+                        <th>सेटिंग</th>
+                        <th>मान (Value)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>DPI (माउस)</td><td><strong>800 DPI</strong></td></tr>
+                    <tr><td>इन-गेम सेंसिटिविटी</td><td><strong>0.50</strong></td></tr>
+                    <tr><td>ADS सेंसिटिविटी</td><td><strong>1.00</strong></td></tr>
+                    <tr><td>माउस पोलिंग रेट</td><td><strong>1000 Hz</strong></td></tr>
+                </tbody>
+            </table>
+            
+            <p style="margin-top: 30px; font-size: 0.9em; color: #777; padding-bottom: 20px;">
+                *ये सेटिंग्स आपके माउस और गेम के अनुसार थोड़ी भिन्न हो सकती हैं।
+            </p>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+        </div>
+
+    <div class="section">
+        <h2>हमसे जुड़े रहें!</h2>
+        </div>
+
+    <div class="section" style="padding: 50px 40px; background-color: #00ffff22; border-bottom: none;">
+        <p style="margin: 0; font-size: 1em;">© 2025 ImarGamingPC. सभी अधिकार सुरक्षित।</p>
+        <p style="font-size: 0.8em; color: #777; margin-top: 10px;">**डिस्क्लेमर:** यह एक फैन पेज है। सभी गेम ट्रेडमार्क उनके संबंधित स्वामियों के हैं।</p>
+    </div>
+
+</body>
+<script>
+    // 1. ओपन/क्लोज सेक्शन फ़ंक्शन
+    function toggleSection(contentId, buttonElement) {
+        const content = document.getElementById(contentId);
+        
+        if (content.style.maxHeight !== "0px" && content.style.maxHeight !== "") {
+            // बंद करें
+            content.style.maxHeight = "0";
+            buttonElement.innerHTML = "सेटिंग्स दिखाएँ ▶️";
+        } else {
+            // खोलें
+            // scrollHeight से कंटेंट की पूरी हाइट मिलती है
+            content.style.maxHeight = content.scrollHeight + "px";
+            buttonElement.innerHTML = "सेटिंग्स छिपाएँ 🔽";
+        }
+    }
+
+    // 2. FAQ को इंटरैक्टिव बनाने के लिए
+    // (पुराना FAQ फ़ंक्शन यहाँ)
+
+    // 3. बैक-टू-टॉप बटन के लिए
+    let mybutton = document.getElementById("backToTop");
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    function topFunction() {
+      document.body.scrollTop = 0; 
+      document.documentElement.scrollTop = 0; 
+    }
+</script>
+</html>
+    
+  </body>
+  
+</html>
